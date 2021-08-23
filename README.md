@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Back-end project
 
-You can use this project with [file-uploader-backend](https://github.com/anorboev3/file-uploader-backend)
+You can use this project with [file-uploader-backend](https://github.com/anorboev3/file-uploader-backend).
