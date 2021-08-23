@@ -1,0 +1,22 @@
+<h3>{{files.fileExtension}}</h3>
+<table datatable class="row-border hover">
+    <thead>
+        <tr>
+          <th>ID</th>
+          <th>File Name</th>
+          <th>File Size</th>
+          <th>Upload Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let f of files.files">
+            <td>{{f.id}}</td>
+            <td>{{f.fileName}}</td>
+            <td>{{f.fileSize | byteToMb}}</td>
+            <td>{{f.uploadDate | date}}</td>
+            <td><a class="btn btn-success" href="{{downloadLink + f.id}}">Download</a></td>
+          </tr>
+      </tbody>
+</table>
+<hr>

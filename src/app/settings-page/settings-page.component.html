@@ -1,0 +1,22 @@
+
+<div class="bontainer">
+    <h1>File upload settings</h1>
+    <form [formGroup]="form" (ngSubmit)="submit()" *ngIf="form != null">
+        <div class="form-group">
+          <label for="allowedSize">Allowed size in MB</label>
+          <input type="number" class="form-control" min="1" value="{{allowedSize}}" formControlName="size">
+        </div>
+        <span *ngIf="sizeLessThenOneError" class="text-danger">Size can not be less than 1</span>
+        <br>
+        <span>Allowed extensions</span><br>
+        <div class="form-check form-check-inline" *ngFor="let extension of extensions">
+          <input class="form-check-input" type="checkbox" id="{{extension}}" value="option1" [checked]="allowedExtensions.includes(extension)" (change)="changeAllowedExtentinos($event, extension)">
+          <label class="form-check-label" for="{{extension}}">{{extension}}</label>
+        </div>
+        <br>
+        <span *ngIf="extensionsNotSelectedError" class="text-danger">Should select at least one extension</span>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <span *ngIf="updatedSuccessfullyMessage" class="text-success"> Updated successfully</span>
+      </form>
+</div>
